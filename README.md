@@ -6,7 +6,7 @@
 
 A modern, responsive ecommerce storefront for shoes, clothing, and accessories.
 
-[![Project](https://img.shields.io/badge/Project-E--Commerce-171717?style=for-the-badge)](https://github.com/)
+[![Project](https://img.shields.io/badge/Project-E--Commerce-171717?style=for-the-badge)](https://github.com/Tcroneb-Net)
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)](#)
 [![Built With](https://img.shields.io/badge/Built%20with-HTML%20%7C%20CSS%20%7C%20JavaScript-blue?style=for-the-badge)](#)
 
