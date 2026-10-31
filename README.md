@@ -12,11 +12,12 @@ A modern, responsive ecommerce storefront for shoes, clothing, and accessories.
 
 **Maintained by [Blessing Anota](https://github.com/Tcroneb-Net) · Tcroneb Hackx**
 
+**Live Website Demo [Shopping Store](https://shopping.top.co.zw) · Sponsored by Hostify Zw Team**
+
 </div>
 
 ---
 
-### Live Demo =.(https://github.com/Tcroneb-Net).
 
 ## 📖 About the Project
 
