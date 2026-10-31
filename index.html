@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOLE & STYLE — Shop</title>
+<style>
+:root{--ink:#171717;--muted:#737373;--line:#e9e7e3;--paper:#faf9f6;--accent:#d8ff55;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--paper)}
+button,input,select{font:inherit}button{cursor:pointer}.topbar{background:var(--ink);color:#fff;text-align:center;padding:9px 14px;font-size:12px;letter-spacing:.08em}
+header{height:76px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 5.5%;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.logo{font-size:22px;font-weight:950;letter-spacing:-1.5px}.logo span{color:#8aa900}.nav{display:flex;gap:27px}.nav a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:650}.actions{display:flex;align-items:center;gap:12px}.iconbtn{border:0;background:transparent;padding:9px;font-size:19px}.cartbtn{background:var(--ink);color:white;border:0;border-radius:99px;padding:11px 16px;font-size:12px;font-weight:750}
+.hero{margin:22px auto 0;width:89%;min-height:390px;border-radius:18px;background:linear-gradient(110deg,#e7e9df 0%,#d5d8c9 48%,#b8bda9 100%);display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden}
+.hero-copy{padding:58px 7%;align-self:center}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.17em;color:#626858}.hero h1{font-size:clamp(38px,5vw,66px);line-height:.98;letter-spacing:-.065em;margin:17px 0}.hero p{color:#555c4e;max-width:390px;line-height:1.6;font-size:14px}.primary{background:var(--ink);color:#fff;border:0;border-radius:99px;padding:14px 22px;font-weight:750;margin-top:14px}.hero-art{display:flex;align-items:center;justify-content:center;position:relative}.hero-art:before{content:"";width:310px;height:310px;border-radius:50%;background:#f1f0e8;position:absolute}.hero-art img{width:min(95%,440px);position:relative;filter:drop-shadow(0 24px 18px #60634c55);transform:rotate(-13deg)}
+.section{width:89%;margin:54px auto}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.section h2{font-size:29px;letter-spacing:-1.2px;margin:0}.sub{color:var(--muted);font-size:13px;margin:7px 0 0}.filters{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0}.chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:9px 15px;font-size:12px;font-weight:700}.chip.active{background:var(--ink);color:white;border-color:var(--ink)}
+.toolbar{display:flex;gap:10px;align-items:center}.search{border:1px solid var(--line);background:white;border-radius:99px;padding:11px 15px;width:210px;outline:none}.sort{border:1px solid var(--line);background:#fff;border-radius:99px;padding:11px 13px;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.product{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .2s}.product:hover{transform:translateY(-4px)}.photo{height:205px;display:grid;place-items:center;position:relative;overflow:hidden}.photo img{width:90%;height:90%;object-fit:contain;mix-blend-mode:multiply}.heart{position:absolute;right:12px;top:12px;background:#ffffffd9;border:0;border-radius:50%;width:34px;height:34px;font-size:17px}.tag{position:absolute;left:12px;top:12px;background:var(--accent);padding:6px 9px;border-radius:99px;font-size:9px;font-weight:900;letter-spacing:.06em}.details{padding:14px}.details h3{font-size:14px;margin:0 0 6px}.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.price{font-weight:850;color:var(--ink);font-size:14px;margin-top:12px}.add{width:100%;border:1px solid var(--ink);background:#fff;border-radius:99px;padding:10px;margin-top:12px;font-size:11px;font-weight:800}.add:hover{background:var(--ink);color:#fff}
+.perks{width:89%;margin:0 auto 60px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.perk{background:#fff;border:1px solid var(--line);padding:22px;border-radius:13px}.perk b{font-size:13px}.perk p{color:var(--muted);font-size:12px;margin:7px 0 0}
+footer{background:#171717;color:white;padding:38px 5.5%;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.footer-muted{color:#aaa;font-size:12px}.drawer-backdrop{position:fixed;inset:0;background:#0007;z-index:10;opacity:0;pointer-events:none;transition:.2s}.drawer-backdrop.show{opacity:1;pointer-events:auto}.drawer{position:fixed;right:0;top:0;height:100%;width:min(430px,100%);background:#fff;z-index:11;transform:translateX(100%);transition:.25s;padding:25px;display:flex;flex-direction:column}.drawer.show{transform:translateX(0)}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px}.drawer-head h2{margin:0}.close{border:0;background:transparent;font-size:25px}.cart-items{overflow:auto;flex:1;padding:8px 0}.cart-row{display:grid;grid-template-columns:75px 1fr auto;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);align-items:center}.cart-row img{width:75px;height:70px;object-fit:contain;background:#f5f4f0;border-radius:9px}.cart-row b{font-size:12px}.cart-row small{display:block;color:var(--muted);margin-top:5px}.qty{display:flex;align-items:center;gap:8px;margin-top:8px}.qty button{width:24px;height:24px;border:1px solid var(--line);background:white;border-radius:50%}.remove{border:0;background:none;color:#888;font-size:11px;margin-top:6px}.cart-foot{border-top:1px solid var(--line);padding-top:17px}.total{display:flex;justify-content:space-between;font-weight:850}.checkout{width:100%;background:var(--ink);color:#fff;border:0;border-radius:99px;padding:15px;margin-top:15px;font-weight:800}.empty{text-align:center;color:var(--muted);padding:55px 10px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:#171717;color:#fff;padding:12px 18px;border-radius:99px;font-size:12px;opacity:0;transition:.2s;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.nav{display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:42px 8% 10px}.hero-art{min-height:220px}.hero-art:before{width:210px;height:210px}.hero-art img{max-height:240px}.section-head{align-items:flex-start;flex-direction:column}.toolbar{width:100%}.search{flex:1}.perks{grid-template-columns:1fr}}
+@media(max-width:520px){header{padding:0 4%;height:65px}.logo{font-size:19px}.hero,.section,.perks{width:92%}.hero{min-height:0}.hero h1{font-size:43px}.photo{height:155px}.details{padding:11px}.grid{gap:10px}.section{margin:40px auto}.toolbar{flex-wrap:wrap}.search{width:100%;flex-basis:100%}.sort{flex:1}}
+</style>
+</head>
+<body>
+<div class="topbar">COMPLIMENTARY SHIPPING ON ORDERS OVER $75 · NEW SEASON, NEW STEPS</div>
+<header>
+  <div class="logo">SOLE<span>&</span>STYLE.</div>
+  <nav class="nav"><a href="#shop">Shop all</a><a href="#shop" data-nav="Shoes">Shoes</a><a href="#shop" data-nav="Clothing">Clothing</a><a href="#shop" data-nav="Accessories">Accessories</a></nav>
+  <div class="actions"><button class="iconbtn" id="searchFocus" aria-label="Search">⌕</button><button class="cartbtn" id="openCart">Bag <span id="cartCount">0</span> ↗</button></div>
+</header>
+<main>
+<section class="hero">
+ <div class="hero-copy"><div class="eyebrow">THE EVERYDAY EDIT · 2026</div><h1>Make every<br>step count.</h1><p>Fresh sneakers, everyday essentials and the little details that pull it all together. Find your next favorite.</p><button class="primary" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Explore the collection ↗</button></div>
+ <div class="hero-art"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85" alt="Red athletic sneaker"></div>
+</section>
+<section class="section" id="shop">
+ <div class="section-head"><div><div class="eyebrow">CURATED FOR YOUR EVERYDAY</div><h2>Find your next favorite.</h2><p class="sub">Good style. Great comfort. No overthinking.</p></div>
+ <div class="toolbar"><input class="search" id="search" placeholder="Search products..." aria-label="Search products"><select class="sort" id="sort"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="az">Name: A to Z</option></select></div></div>
+ <div class="filters" id="filters"><button class="chip active" data-cat="All">All</button><button class="chip" data-cat="Shoes">Shoes</button><button class="chip" data-cat="Clothing">Clothing</button><button class="chip" data-cat="Accessories">Accessories</button></div>
+ <div class="grid" id="products"></div>
+</section>
+<section class="perks"><div class="perk"><b>↗ Free shipping over $75</b><p>A little extra reason to treat yourself.</p></div><div class="perk"><b>↺ Easy 30-day returns</b><p>Try it on. Make sure it feels right.</p></div><div class="perk"><b>♡ Made for everyday</b><p>Versatile picks you’ll reach for on repeat.</p></div></section>
+</main>
+<footer><div><div class="logo">SOLE&STYLE.</div><p class="footer-muted">Find your everyday favorites.</p></div><div class="footer-muted">Shop · About · Help · Contact<br><br>© 2026 Sole & Style. Demo storefront.</div></footer>
+<div class="drawer-backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart" aria-modal="true" role="dialog">
+ <div class="drawer-head"><h2>Your bag <span id="drawerCount">(0)</span></h2><button class="close" id="closeCart" aria-label="Close cart">×</button></div>
+ <div class="cart-items" id="cartItems"></div>
+ <div class="cart-foot"><div class="total"><span>Subtotal</span><span id="subtotal">$0.00</span></div><p class="sub">Shipping and taxes calculated at checkout.</p><button class="checkout" id="checkout">Continue to checkout ↗</button></div>
+</aside>
+<div class="toast" id="toast"></div>
+<script>
+const products=[
+{id:1,name:"Air Motion Runner",cat:"Shoes",price:89.00,tag:"BESTSELLER",color:"#e9e6df",rating:"4.9",img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=650&q=80"},
+{id:2,name:"Cloud Walk Classic",cat:"Shoes",price:74.00,tag:"NEW",color:"#e7e9e5",rating:"4.8",img:"https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=650&q=80"},
+{id:3,name:"Street Low Sneaker",cat:"Shoes",price:96.00,tag:"POPULAR",color:"#eee9e2",rating:"4.9",img:"https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=650&q=80"},
+{id:4,name:"Everyday Canvas",cat:"Shoes",price:58.00,tag:"EASY PICK",color:"#e8e8e4",rating:"4.7",img:"https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=650&q=80"},
+{id:5,name:"Essential Hoodie",cat:"Clothing",price:62.00,tag:"SOFT TOUCH",color:"#e8e4df",rating:"4.8",img:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=650&q=80"},
+{id:6,name:"Everyday Tote",cat:"Accessories",price:32.00,tag:"GO-TO",color:"#e9e5dc",rating:"4.7",img:"https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=650&q=80"},
+{id:7,name:"Sport Cap",cat:"Accessories",price:26.00,tag:"JUST IN",color:"#e5e7e2",rating:"4.6",img:"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=650&q=80"},
+{id:8,name:"Relaxed Tee",cat:"Clothing",price:28.00,tag:"EVERYDAY",color:"#e9e7e1",rating:"4.8",img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=650&q=80"}
+];
+let cart={},activeCat="All",favorites=new Set();
+const money=n=>"$"+n.toFixed(2);
+function renderProducts(){
+ let list=products.filter(p=>(activeCat==="All"||p.cat===activeCat)&&(`${p.name} ${p.cat}`).toLowerCase().includes(document.getElementById("search").value.toLowerCase()));
+ const sort=document.getElementById("sort").value;
+ if(sort==="low")list.sort((a,b)=>a.price-b.price);if(sort==="high")list.sort((a,b)=>b.price-a.price);if(sort==="az")list.sort((a,b)=>a.name.localeCompare(b.name));
+ document.getElementById("products").innerHTML=list.length?list.map(p=>`<article class="product"><div class="photo" style="background:${p.color}"><span class="tag">${p.tag}</span><button class="heart" onclick="toggleFav(${p.id})" aria-label="Add to wishlist">${favorites.has(p.id)?"♥":"♡"}</button><img src="${p.img}" alt="${p.name}" loading="lazy"></div><div class="details"><h3>${p.name}</h3><div class="meta"><span>${p.cat}</span><span>★ ${p.rating}</span></div><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">ADD TO BAG +</button></div></article>`).join(""):`<p class="sub">No products found. Try another search.</p>`;
+}
+function toggleFav(id){favorites.has(id)?favorites.delete(id):favorites.add(id);renderProducts();toast(favorites.has(id)?"Added to your wishlist":"Removed from wishlist")}
+function addToCart(id){cart[id]=(cart[id]||0)+1;renderCart();toast("Added to your bag")}
+function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];renderCart()}
+function renderCart(){
+ const entries=Object.entries(cart),count=entries.reduce((s,[,q])=>s+q,0),subtotal=entries.reduce((s,[id,q])=>s+products.find(p=>p.id==id).price*q,0);
+ document.getElementById("cartCount").textContent=count;document.getElementById("drawerCount").textContent=`(${count})`;document.getElementById("subtotal").textContent=money(subtotal);
+ document.getElementById("cartItems").innerHTML=entries.length?entries.map(([id,q])=>{let p=products.find(x=>x.id==id);return `<div class="cart-row"><img src="${p.img}" alt=""><div><b>${p.name}</b><small>${money(p.price)}</small><div class="qty"><button onclick="changeQty(${id},-1)">−</button><span>${q}</span><button onclick="changeQty(${id},1)">+</button></div></div><div><b>${money(p.price*q)}</b><br><button class="remove" onclick="changeQty(${id},-${q})">Remove</button></div></div>`}).join(""):`<div class="empty"><div style="font-size:38px">🛍</div><h3>Your bag is taking a break.</h3><p>Add something you love to get started.</p></div>`;
+ document.getElementById("checkout").disabled=!count;document.getElementById("checkout").style.opacity=count?1:.45;
+}
+function openCart(){document.getElementById("drawer").classList.add("show");document.getElementById("backdrop").classList.add("show")}
+function closeCart(){document.getElementById("drawer").classList.remove("show");document.getElementById("backdrop").classList.remove("show")}
+let toastTimer;function toast(msg){let t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove("show"),1800)}
+document.getElementById("filters").addEventListener("click",e=>{let b=e.target.closest("[data-cat]");if(!b)return;activeCat=b.dataset.cat;document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x===b));renderProducts()});
+document.querySelectorAll("[data-nav]").forEach(a=>a.addEventListener("click",()=>{activeCat=a.dataset.nav;document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x.dataset.cat===activeCat));renderProducts()}));
+document.getElementById("search").addEventListener("input",renderProducts);document.getElementById("sort").addEventListener("change",renderProducts);
+document.getElementById("searchFocus").onclick=()=>{document.getElementById("shop").scrollIntoView({behavior:"smooth"});setTimeout(()=>document.getElementById("search").focus(),350)};
+document.getElementById("openCart").onclick=openCart;document.getElementById("closeCart").onclick=closeCart;document.getElementById("backdrop").onclick=closeCart;
+document.getElementById("checkout").onclick=()=>toast("Demo checkout — connect a payment provider to accept orders");
+renderProducts();renderCart();
+</script>
+</body></html>
